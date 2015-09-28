@@ -1,0 +1,21 @@
+Template: evote-hes/log_server_ip
+Type: string
+Description: Keskse jälgimisjaama host ja port:
+ Hääleedastusserveri kõik logiteated saadetakse kesksesse jälgimisjaama.
+ Logiteadete saatmine toimub teenuse «syslog» ja andmesideprotokolli UDP abil.
+ Jälgimisjaama andmed tuleb määrata kujul «host:port».
+
+Template: evote-hes/apache-config
+Type: note
+Description: Veebiserver vajab täiendavat seadistamist!
+ Apache2 veebiserverit ei taaskäivitatud, kuna laadimata on:
+ .
+    * veebiserveri sertifikaat (SSLCertificateFile)
+    * veebiserveri privaatvõti (SSLCertificateKeyFile)
+    * juursertifikaadid (SSLCACertificatePath)
+ .
+ Juursertifikaatide laadimine toimub HES-i operaatoriliidesest.
+ .
+ Apache2 sätete testimiseks on võimalik kasutada käsku
+ .
+   # apache2ctl configtest

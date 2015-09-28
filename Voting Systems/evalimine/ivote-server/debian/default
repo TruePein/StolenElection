@@ -1,0 +1,24 @@
+# /etc/default/evote
+
+EVREG_CONFIG=/var/evote/registry
+EVREG_BIN=/usr/lib/python2.7/dist-packages
+LANG=et_EE.utf-8
+
+# less
+
+LESSSECURE=1
+LESSCHARSET=utf-8
+
+# ajutiste failide asukoht
+
+TMPFS=/var/tmp/evote
+
+if [ -d $TMPFS ]; then
+	TMPDIR=$TMPFS
+	EVOTE_TMPDIR=$TMPFS
+fi
+
+UMASK=007
+
+# LVM snapshot configuration for backup
+#EVOTE_SNAPSHOT_NAME=evote_snapshot

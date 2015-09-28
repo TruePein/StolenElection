@@ -1,0 +1,33 @@
+# -*- coding: UTF8 -*-
+
+# Copyright: Eesti Vabariigi Valimiskomisjon
+# (Estonian National Electoral Committee), www.vvk.ee
+# Written in 2004-2013 by Cybernetica AS, www.cyber.ee
+#
+# This work is licensed under the Creative Commons
+# Attribution-NonCommercial-NoDerivs 3.0 Unported License.
+# To view a copy of this license, visit
+# http://creativecommons.org/licenses/by-nc-nd/3.0/.
+
+# Konfigureeritavad (vea)teated
+# Teate moodustab nelik, kus
+# 1. rida on grupp
+# 2. rida on kommentaar
+# 3. rida on võti
+# 4. rida on teade
+
+################################
+# Verification protocol errors #
+################################
+
+VERIFICATION_ERRORS
+The verification vote ID has expired, reached it's maximum count or is otherwise invalid
+INVALID_VOTE_ID
+Seda hääle identifikaatorit pole võimalik hääle kontrollimiseks kasutada
+
+VERIFICATION_ERRORS
+Error message given for internal errors during vore verification
+TECHNICAL_ERROR_VOTE_VERIFICATION
+Tehniline viga hääle kontrollimisel
+
+# vim:set ts=4 sw=4 et fileencoding=utf8:
