@@ -1,0 +1,78 @@
+{{
+response.files.append(URL('static','cleditor/jquery.cleditor.css'))
+response.files.append(URL('static','cleditor/jquery.cleditor.min.js'))
+response.files.append(URL('static','cleditor/jquery.cleditor.table.min.js'))
+}}
+{{extend 'layout.html'}}
+
+<h1>Create/Edit Election</h1>
+
+{{=form.custom.begin}}
+<table width="100%">
+  <tr>
+    <td colspan="2">{{=form.custom.widget.title}}</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      <h3>{{=T('Ballot')}}</h3>
+      <p>{{=T('This is the text of the ballot. %s %s %s ..., add INPUT radio boxes. Radio boxes with the same number correspond to exclusive options.') % ('{'*2+'0'+'}'*2,
+'{'*2+'1'+'}'*2,'{'*2+'2'+'}'*2)}}</p>
+      {{=form.custom.widget.ballot_model}}
+    </td>
+  </tr>
+  <tr>
+    <td><h3>{{=T('Voters')}}</h3>
+      <p>{{=T('List of emails of voters.')}}</p>
+      {{=form.custom.widget.voters}}</td>
+    <td><h3>{{=T('Managers')}}</h3>
+      <p>{{=T('List of emails of election managers')}}</p>
+      {{=form.custom.widget.managers}}</td>
+  </tr>
+  <tr>
+    <td colspan="1"><h3>{{=T('Deadline')}}</h3>
+      <p>{{=T('Results will be public after the deadline (UTC/GMT time)')}}</p>
+      {{=form.custom.widget.deadline}}</td>
+    <td colspan="1">
+      <a href="#" class="btn" onclick="jQuery('.advanced').slideToggle();return false;">
+	{{=T('more options')}}
+      </a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2"><h3>{{=T('Text of email with voting link')}}</h3>
+      {{=form.custom.widget.vote_email}}</td>
+  </tr>
+  <tr>
+    <td colspan="2"><h3>{{=T('Text of email for voting receipt')}}</h3>
+      {{=form.custom.widget.voted_email}}</td>
+  </tr>
+  <tr>
+    <td colspan="2"><h3>{{=T('Text of email for non-voters')}}</h3>
+      {{=form.custom.widget.not_voted_email}}</td>
+  </tr>
+  <tr>
+    <td colspan="2"><h3>{{=T('Email sender')}}</h3>
+      {{=form.custom.widget.email_sender}}</td>
+  </tr>
+  {{if form.custom.deletable:}}
+  <tr>
+    <td colspan="2"><h3>{{=T('Delete?')}} {{=form.custom.deletable}}</h3></td>
+  </tr>
+  {{pass}}  
+</table>
+<div style="padding-top:30px">
+  {{=form.custom.submit}}
+  {{=form.custom.end}}
+</div>
+
+
+<script type="text/javascript">
+jQuery(function() {
+  jQuery("#election_ballot_model").cleditor({width: '100%'})[0].focus();
+  jQuery("#election_voters").css({width:'90%'});
+  jQuery("#election_managers").css({width:'90%'});
+  jQuery(".advanced").hide();
+  jQuery("input[type=submit]").addClass('btn btn-primary');
+});
+</script>
+

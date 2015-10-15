@@ -1,0 +1,12 @@
+{{extend 'layout.html'}}
+
+{{=LOAD('default','start_callback',args=election.id,ajax=True,target='target')}}
+
+<div id="demo">
+
+<h2 style="color:red">{{=T('Test Ballot (not actual voting ballot)')}}</h2>
+
+{{=demo}}
+
+</div>
+
