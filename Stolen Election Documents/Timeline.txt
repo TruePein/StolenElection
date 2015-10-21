@@ -1,0 +1,25 @@
+Timeline:
+
+10-25-15
+Choose systems to attack
+	Systems can be older versions of a current system
+
+11-8-15
+Research the systems (Google Scholar)
+	Figure out how the systems work (not how everything works, but how things 
+		work for the most part)
+		
+	Learn of any past attacks on the systems
+
+11-15-15
+Simulate the systems on our computers
+
+11-22-15
+Find tools to help with attacks
+	Learn only the necessary parts of the tools
+	
+11-29-15
+Write any missing software
+	Either it works on its own, or it can take an input after it starts running
+	
+	(Learn sockets)
